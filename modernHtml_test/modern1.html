@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Modern html</title>
+</head>
+<body>
+	<h1>今日の日付を表示します。</h1>
+	<script type="text/javascript">
+		var clicked = false;
+		var headOne = document.getElementsByTagName( "h1");
+		console.log( "first", clicked);
+		headOne[0].addEventListener( "click", function( eve) {
+			console.log( clicked);
+			if ( clicked) {
+				console.log( "aleray");
+				alert( "Already clicked.");
+				return;
+			}
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth();
+			var day = date.getDate();
+			clicked = true;
+			console.log( clicked);
+
+			/*document.body.innerHTML += "<p>今日の日付は" + year + "年" + month + "月" + day + "日です。</p>";*/
+		}, false);
+
+		document.addEventListener( 'load', function ( eve) {
+			headOne[0].addEventListener( "click", function(eve) {
+				alert( "click");
+			}, false);
+		}, false);
+	</script>
+</body>
+</html>
