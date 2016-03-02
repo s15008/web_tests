@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax Test</title>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		document.addEventListener( 'DOMContentLoaded', function() {
+			var query = "/charactor.json";
+			$.get( query, function( data) {
+				console.log( data);
+			});
+		});
+		</script>
+	
+</body>
+</html>
