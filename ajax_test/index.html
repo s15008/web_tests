@@ -11,6 +11,7 @@
 <textarea id="textarea" style=" display: block;"></textarea>
 <button id="get">Get</button>
 <button id="apply">Apply</button>
+<button id="clear">Clear</button>
 
 <script type="text/javascript">
 $( function() {
@@ -25,20 +26,22 @@ $( function() {
 			contentType: 'application/json',
 			dataType: 'json'
 		}).done( function(data){
-			console.log( "succses", data);
 			jsonData = data;
 		}).fail( function(data){
-			console.log( "error!");
-		});		
+		});
 	});
 
-	// Apply a add texts to textarea when click a button.
-	// Applyボタンをクリックした時Textareaにテキストを追加する
+  // Apply a add texts to textarea when click a button.
+  // Applyボタンをクリックした時Textareaにテキストを追加する
 	$( '#apply').on( 'click', function( eve) {
-		console.log( jsonData.name);
-		$( '#textarea').append( jsonData.name);
+		$( '#textarea').val( jsonData.name);
 	});
 
+  // Clear a texts to textarea when click a button.
+  // Clearボタンをクリックした時Textareaのテキストを削除する
+	$( '#clear').on( 'click', function( eve) {
+		$( '#textarea').val('');
+	});
 });
 </script>	
 </body>
