@@ -2,18 +2,45 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>ajax Test</title>
+	<title>Ajax Test</title>
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 </head>
+
 <body>
-	<script type="text/javascript">
-		document.addEventListener( 'DOMContentLoaded', function() {
-			var query = "/charactor.json";
-			$.get( query, function( data) {
-				console.log( data);
-			});
-		});
-		</script>
-	
+<h1>chrome以外のブラウザで見てね</h1>
+<textarea id="textarea" style=" display: block;"></textarea>
+<button id="get">Get</button>
+<button id="apply">Apply</button>
+
+<script type="text/javascript">
+$( function() {
+	var jsonData = null;
+
+	// Get a json file when click a button.
+	// Getボタンをクリックした時jsonファイルを取得する
+	$( '#get').on( 'click', function( eve) {
+		$.ajax( {
+			type: 'get',
+			url: 'charactor.json',
+			contentType: 'application/json',
+			dataType: 'json'
+		}).done( function(data){
+			console.log( "succses", data);
+			jsonData = data;
+		}).fail( function(data){
+			console.log( "error!");
+		});		
+	});
+
+	// Apply a add texts to textarea when click a button.
+	// Applyボタンをクリックした時Textareaにテキストを追加する
+	$( '#apply').on( 'click', function( eve) {
+		console.log( jsonData.name);
+		$( '#textarea').append( jsonData.name);
+	});
+
+});
+</script>	
 </body>
+
 </html>
