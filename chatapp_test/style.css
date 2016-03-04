@@ -1,7 +1,30 @@
-body {
-	background-color: #555;
-}
+
 h1 {
 	text-align: center;
 	color: hotpink;
+}
+
+body {
+	background-color: #555;
+}
+
+main {
+	width: 90%;
+	margin: auto;
+}
+
+#chatArea {
+	background-color: #fdd;
+	height: 25em;
+	padding: 5px;
+}
+
+#textInput {
+	background-color: #fdd;
+	color: #222;
+	font-size: 15px;
+}
+
+#sendBtn {
+	display: block;
 }
