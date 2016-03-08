@@ -1,0 +1,9 @@
+
+#EnemyLifeBar {
+	position: relative;
+	margin: auto;
+	width: 500px;
+	height: 50px;
+	background-color: hotpink;
+	left: 0;
+}
