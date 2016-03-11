@@ -3,11 +3,13 @@
 	"id" : 1,
 	"name" : "Milk Shake",
 	"life" : 500,
-	"comment" : "bukkake..."
+	"comment" : "bukkake...",
+	"url" : "images/milkShake.png"
 },
 {
 	"id" : 2,
 	"name" : "Turtle Head",
 	"life" : 1000,
-	"comment" : "kameatama..."
+	"comment" : "kameatama...",
+	"url" : "images/milkShake.png"
 }
