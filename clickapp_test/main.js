@@ -1,6 +1,7 @@
 var ATTACK_POINT_DEF = 100;
 var ENEMY_LIFE_DEF = 400;
 var ENEMY_IMG_URL = "img/milkSake.png";
+var ENEMY_NAME = "みるくしぇーく";
 
 $( function() {
 	var Player = function() {
@@ -12,8 +13,11 @@ $( function() {
 		this.player = player;
 		this.maxLife = ENEMY_LIFE_DEF;
 		this.image = $( "#enemyImg");
+		this.name = ENEMY_NAME;
 		this.life = this.maxLife;
 		this.dead = false;
+
+		$( "#enemyName").prepend( '<p>' + this.name + '</p>');
 	};
 
 	Enemy.prototype.hit = function() {
