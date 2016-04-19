@@ -9,7 +9,21 @@ $( function() {
 			console.info( typeof data);
 			$( '#chatArea').html( data);
 		}).fail( function(data){
-			console.error( "req error")
+			console.error( "req error");
+		});
+	});
+
+	$( '#sendBtn').on( 'click', function( eve) {
+		var message = $('#textInput').val();
+
+		$.ajax( {
+			type: 'post',
+			url: 'input.php',
+            data: message
+		}).done( function(data){
+			console.info( "req ok");
+		}).fail( function(data){
+			console.error( "req error");
 		});
 	});
 

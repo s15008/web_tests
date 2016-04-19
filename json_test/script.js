@@ -3,19 +3,20 @@ var DEBUG = true;
 var messageNum = 0;
 
 document.addEventListener( 'DOMContentLoaded', function( eve) {
+	var charactorSrc = null;
+
 	$.ajax({
-	  url: "/charactor.json",
-	  data: {
-	    zipcode: 97201
-	  },
-	  success: function( data ) {
-	    $( "#weather-temp" ).html( "<strong>" + data + "</strong> degrees" );
-	  }
+		url: "http://127.0.1.1/charactor.json",
+	}).done(function(data){ //ajaxの通信に成功した場合
+		alert( "xhr success");
+		charactorData = data;
+	}).fail(function(data){ //ajaxの通信に失敗した場合
+		alert( "xhr error");
 	});
 
 	// charactor data
-	var charctorData = '{"name" : "pierre", "message" : [ "やふー", "こなものだいすきー", "きょうじ、きょうじー", "みのり！"]}';
-	var messageL = JSON.parse( charctorData);
+	//var charctorData = '{"name" : "pierre", "message" : [ "やふー", "こなものだいすきー", "きょうじ、きょうじー", "みのり！"]}';
+	var charactorData = JSON.parse( charactorSrc);
 
 	// Message Box
 	var messageBox = document.getElementById( 'messageBox');
@@ -26,12 +27,12 @@ document.addEventListener( 'DOMContentLoaded', function( eve) {
 
 	var message = document.getElementById( "message");
 
-	messageBox.print( messageL[ "message"][ messageNum]);
+	messageBox.print( charactorData[ "message"][ messageNum]);
 
 	messageBox.addEventListener( 'click', function( eve) {
 		messageNum++;
-		if( messageNum > messageL[ "message"].length-1) messageNum = 0;
-		this.print( messageL[ "message"][ messageNum]);
+		if( messageNum > charactorData[ "message"].length-1) messageNum = 0;
+		this.print( charactorData[ "message"][ messageNum]);
 
 	}, false);
 

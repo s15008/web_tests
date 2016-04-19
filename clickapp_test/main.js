@@ -18,6 +18,7 @@ $( function() {
 		this.dead = false;
 
 		$( "#enemyName").prepend( '<p>' + this.name + '</p>');
+		
 	};
 
 	Enemy.prototype.hit = function() {
