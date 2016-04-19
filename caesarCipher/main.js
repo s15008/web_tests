@@ -1,13 +1,17 @@
+'use strict';
+
 var algorithmList = {
-	rot13: function( string) { caesarStr( string, 13)},
-	yogimania: yogimania
+	rot13: function( string) { return caesarStr( string, 13);},
+	yogimania: function( string) { return yogimania();}
 };
 
 document.getElementById( 'btnEncrypt').addEventListener( 'click', function( e){
 	var inTxt = document.getElementById( 'input').value;
-	var algorithm = document.getElementById( 'algorithm');
+	var algoOpt = document.getElementById( 'algorithm');
+	var algoName =  algoOpt[ algoOpt.selectedIndex].value;
 
-	var outTxt = caesarStr( inTxt, 13);
+	//var outTxt = caesarStr( inTxt, 13);
+	var outTxt = algorithmList[ algoName]( inTxt);
 	document.getElementById( 'output').value = outTxt;
 });
 
@@ -26,6 +30,11 @@ function caesarStr( string, shift) {
 	return result;
 }
 
-function yogimania() {
+function yogimania( string) {
+	//TODO 1919/1 I'm Yogi Genbu.
+	var legendaryYears = 4;
+	if ( 0 == Math.floor( Math.random() * legendaryYears)) {
+		return '君は与儀を知っているのか？';
+	}
 	return 'yogimania';
 }

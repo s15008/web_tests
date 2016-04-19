@@ -3,16 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Caesar Cipher</title>
+	<style>
+		#top {
+			 display: block;
+			 margin-bottom: 5px;
+		}
+
+		#top p {
+			margin-bottom: 5px;
+		}
+	</style>
 </head>
 <body>
-	Algorithm
-	<select name="algorithm" id="algorithm" style="display: block; margin-bottom: 5px;">
-		<option value="rot13">ROT-13</option>
-		<option value="yogimania">Yogimania</option>
-	</select>
-	<input type="text" name="input" id="input" placeholder="Input" step="5">
-	<button type="button" id="btnEncrypt">Encrypt</button>
-	<input type="text" name="output" id="output" placeholder="Output" readonly="">
+	<div id="top">
+		<p>Algorithm</p>
+		<select name="algorithm" id="algorithm">
+			<option value="rot13">ROT-13</option>
+			<option value="yogimania">Yogimania</option>
+		</select>
+	</div>
+	<div id="bottom">
+		<input type="text" name="input" id="input" placeholder="Input" step="5">
+		<button type="button" id="btnEncrypt">Encrypt</button>
+		<input type="text" name="output" id="output" placeholder="Output" readonly="">		
+	</div>
 	<script src='./main.js'></script>
 </body>
 </html>
