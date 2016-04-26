@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Caesar Cipher</title>
 	<style>
+		body {
+			margin: 0;
+		}
+
 		#top {
 			 display: block;
 			 margin-bottom: 5px;
@@ -11,6 +15,16 @@
 
 		#top p {
 			margin-bottom: 5px;
+		}
+
+		#fever {
+			position: absolute;
+			left: 0;
+			top: 100;			
+		}
+		#fever p {
+			font-size: 100px;
+			display: inline;
 		}
 	</style>
 </head>
@@ -27,6 +41,9 @@
 		<button type="button" id="btnEncrypt">Encrypt</button>
 		<input type="text" name="output" id="output" placeholder="Output" readonly="">		
 	</div>
+
+	<div id="fever"><p>Fever!!</p></div>
+
 	<script src='./main.js'></script>
 </body>
 </html>

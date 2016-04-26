@@ -30,11 +30,17 @@ function caesarStr( string, shift) {
 	return result;
 }
 
+var yogiGoroku = function() {
+	var goroku = [
+		'君は与儀を知っているのか？',
+		'僕は与儀。 君も与儀かい？',
+		"I'm a perfect Yogiman"
+	];
+
+	return goroku[ Math.floor( Math.random() * goroku.length)];
+};
+
 function yogimania( string) {
 	//TODO 1919/1 I'm Yogi Genbu.
-	var legendaryYears = 4;
-	if ( 0 == Math.floor( Math.random() * legendaryYears)) {
-		return '君は与儀を知っているのか？';
-	}
-	return 'yogimania';
+	return yogiGoroku();
 }
